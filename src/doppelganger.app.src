@@ -1,0 +1,13 @@
+{application, doppelganger,
+ [
+  {description, ""},
+  {vsn, "1.0.0"},
+  {modules, [doppelganger]},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { doppelganger_app, []}},
+  {env, []}
+ ]}.
