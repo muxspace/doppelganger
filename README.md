@@ -20,9 +20,10 @@ riak host and port.
 
 Future
 ======
-1. Use poolboy to manage riak connections
-2. Detect network partition and cache updates locally (maybe in a 
-   separate riak bucket)
+1. Detect network partition and cache updates locally (maybe in a 
+   separate riak bucket or in ets)
+2. Potentially support multiple riak nodes (but probably leave as is, which
+   would be one-for-one)
 
 References
 ==========
