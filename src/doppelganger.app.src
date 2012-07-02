@@ -6,7 +6,9 @@
   {registered, []},
   {applications, [
                   kernel,
-                  stdlib
+                  stdlib,
+                  lager,
+                  riakpool
                  ]},
   {mod, { doppelganger_app, []}},
   {env, []}
