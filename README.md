@@ -18,12 +18,21 @@ Doppelganger requires some properties to be set in order to replicate data
 properly. The only options are to activate the module and set the target
 riak host and port. 
 
+    {doppelganger, [
+      {active, true},
+      {riak_host, "your-doppelganger-host" },
+      {riak_port, 8081} % Should be your PB port
+    ]},
+
+
 Future
 ======
 1. Detect network partition and cache updates locally (maybe in a 
    separate riak bucket or in ets)
 2. Potentially support multiple riak nodes (but probably leave as is, which
    would be one-for-one)
+3. Preserve client id and any other meta data that needs to be preserved
+   from the original client request
 
 References
 ==========
