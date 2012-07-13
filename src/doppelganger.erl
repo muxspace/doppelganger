@@ -40,9 +40,13 @@ stop() ->
 %% Description: Initiates the server
 %% --------------------------------------------------------------------
 init(_Args) ->
-  {Host,Port} = get_server(),
-  riakpool:start_pool(Host,Port),
-  process_flag(trap_exit,true),
+  case get_env(active,false) of
+    true -> 
+      {Host,Port} = get_server(),
+      riakpool:start_pool(Host,Port),
+      process_flag(trap_exit,true);
+    _ -> ok
+  end,
   {ok, {}}.
 
 %% --------------------------------------------------------------------
