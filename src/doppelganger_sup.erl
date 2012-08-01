@@ -25,6 +25,6 @@ start_link() ->
 
 init([]) ->
   application:start(lager),
-	EvilTwin = sup_util:config(doppelganger,doppelganger,[]),
+	EvilTwin = ?CHILD(doppelganger,worker),
   {ok, { {one_for_one, 5, 10}, [EvilTwin]} }.
 
