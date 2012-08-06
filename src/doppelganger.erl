@@ -97,7 +97,9 @@ get_riakc_obj(RObject) ->
   B = riak_object:bucket(RObject),
   K = riak_object:key(RObject),
   V = riak_object:get_value(RObject),
-  riakc_obj:new(B,K,V).
+  M = riak_object:get_metadata(RObject),
+  Object = riakc_obj:new(B,K,V),
+  riakc_obj:update_metadata(Object, M).
 
 get_server() ->
   Host = get_env(riak_host, {error, no_host_defined}),
